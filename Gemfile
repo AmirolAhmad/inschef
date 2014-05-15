@@ -52,9 +52,6 @@ gem 'devise'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# https://github.com/ambethia/recaptcha
-gem "recaptcha", :require => "recaptcha/rails"
-
 # Use unicorn as the app server
 # gem 'unicorn'
 
