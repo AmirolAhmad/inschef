@@ -1,27 +1,8 @@
 <div class="ui pointing small inverted menu no-border">
-  <a class="active item">
-    <i class="home icon"></i> Home
-  </a>
-  <a class="item">
-    <i class="mail icon"></i> Messages
-  </a>
-  <a class="item">
-    <i class="user icon"></i> Friends
-  </a>
+  <%= link_to raw("<i class=\"home icon\"></i> Home"), root_path, :class => 'item' %>
+
   <div class="right menu">
-    <div class="item">
-      <div class="ui icon input">
-        <input placeholder="Search..." type="text">
-        <i class="search link icon"></i>
-      </div>
-    </div>
-    <div class="ui dropdown item">
-      Language <i class="dropdown icon"></i>
-      <div class="menu">
-        <a class="item">English</a>
-        <a class="item">Russian</a>
-        <a class="item">Spanish</a>
-      </div>
-    </div>
+    <%= link_to raw("<div class=\"ui red button\"><i class=\"lock icon\"></i> Register</div>"), new_user_registration_path, :class => 'item' %>
+    <%= link_to raw("<i class=\"user icon\"></i> Sign in"), new_user_session_path, :class => 'item' %>
   </div>
 </div>
