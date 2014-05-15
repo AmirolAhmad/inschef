@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :authentication_keys => [:login], stretches: 20
 
-  validates :username, presence: true, uniqueness: { :case_sensitive => false }
+  validates :username, uniqueness: { :case_sensitive => false }
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
