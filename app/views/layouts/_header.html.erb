@@ -2,7 +2,11 @@
   <%= link_to raw("<i class=\"home icon\"></i> Home"), root_path, :class => 'item' %>
 
   <div class="right menu">
-    <%= link_to raw("<div class=\"ui red button\"><i class=\"lock icon\"></i> Register</div>"), new_user_registration_path, :class => 'item' %>
-    <%= link_to raw("<i class=\"user icon\"></i> Sign in"), new_user_session_path, :class => 'item' %>
+  	<% if user_signed_in? %>
+    	<%= link_to raw("<i class=\"off icon\"></i> Logout"), destroy_user_session_path, :method => 'delete', :class => 'item' %>
+    <% else %>
+    	<%= link_to raw("<div class=\"ui red button\"><i class=\"lock icon\"></i> Register</div>"), new_user_registration_path, :class => 'item' %>
+    	<%= link_to raw("<i class=\"user icon\"></i> Sign in"), new_user_session_path, :class => 'item' %>
+    <% end %>
   </div>
 </div>
