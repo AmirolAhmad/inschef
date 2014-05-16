@@ -3,6 +3,14 @@
 
   <div class="right menu">
   	<% if user_signed_in? %>
+  		<div class="ui dropdown item">
+			  <%= current_user.username %> <i class="icon dropdown"></i>
+			  <div class="menu">
+			  	<%= link_to raw("<i class=\"settings icon\"></i> Account Settings"), edit_user_registration_path, :class => 'item' %>
+			    <a class="item"><i class="globe icon"></i> Choose Language</a>
+			    <a class="item"><i class="edit icon"></i> Edit Profile</a>
+			  </div>
+			</div>
     	<%= link_to raw("<i class=\"off icon\"></i> Logout"), destroy_user_session_path, :method => 'delete', :class => 'item' %>
     <% else %>
     	<%= link_to raw("<div class=\"ui red button\"><i class=\"lock icon\"></i> Register</div>"), new_user_registration_path, :class => 'item' %>
@@ -10,3 +18,5 @@
     <% end %>
   </div>
 </div>
+
+

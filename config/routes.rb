@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'user_details/index'
+
   devise_for :users
+  resources :user_details
+
   get 'static/index'
 
   root 'static#index'
