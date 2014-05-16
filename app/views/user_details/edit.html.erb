@@ -1,1 +1,15 @@
-<h1><%= @userdetails.fname %></h1>
+
+<%= form_for(@userdetails) do |f| %>
+<div>
+<%= f.text_field :fname %>
+</div>
+
+<div>
+<%= f.text_field :lname %>
+</div>
+
+<div>
+<%= f.submit "Create" %>
+</div>
+
+<% end %>
