@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   attr_accessor :login
 
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # :confirmable, :lockable, :timeoutable and :omniauthable, stretches: 20
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :authentication_keys => [:login], stretches: 20
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :authentication_keys => [:login]
 
   validates :username, uniqueness: { :case_sensitive => false }
 
